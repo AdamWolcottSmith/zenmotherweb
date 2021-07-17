@@ -9,19 +9,21 @@ import Live from './components/Live'
 import Music from './components/Music'
 import Store from './components/Store'
 import Videos from './components/Videos'
+import Home from './components/Home'
 
 function App() {
   return (
     <Router>
       <div>
         <NavBar />
-
-        <Route path='/contact' component={Contact} />
-        <Route path='/live' component={Live} />
-        <Route path='/music' component={Music} />
-        <Route path='/store' component={Store} />
-        <Route path='/videos' component={Videos} />
-
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/live' component={Live} />
+          <Route path='/music' component={Music} />
+          <Route path='/store' component={Store} />
+          <Route path='/videos' component={Videos} />
+        </Switch>
       </div>
     </Router>
   )
